@@ -7,8 +7,9 @@
 :root {
   --text-color: #fff;
   --bg-url: url(./assets/bg-mobile.jpg);
-  --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.05);
+  --stroke-color: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(255, 255, 255, 0.03);
+  --surface-color-diferent: linear-gradient(175deg, rgba(255,0,107,1) 0%, rgba(112,0,255,1) 100%);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
@@ -18,7 +19,8 @@
   --text-color: #000;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.05); 
+  --surface-color-diferent: linear-gradient(175deg, rgba(255,98,164,1) 0%, rgba(160,85,255,1) 100%);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
@@ -65,15 +67,15 @@ body * {
 }
 
 #switch button {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: #fff var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
 
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 6%;
   z-index: 1;
   transform: translateY(-50%);
 
@@ -86,18 +88,32 @@ body * {
 
 .light #switch button {
   animation: slide-in 0.4s forwards;
+  background: #000 var(--switch-bg-url) no-repeat center;
+
 }
 
 #switch span {
   display: block;
-  width: 64px;
-  height: 24px;
+  width: 65px;
+  height: 34px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 999px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*links*/
 ul {
@@ -119,14 +135,20 @@ ul li a {
 
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
+  border-radius: 30px;
+  backdrop-filter: blur(200px);
   -webkit-backdrop-filter: blur(4px);
 
   text-decoration: none;
   font-weight: 500;
 
   transition: background 0.5s;
+}
+
+#diferent {
+  background: var(--surface-color-diferent);
+  border: none;
+
 }
 
 ul li a:hover {
@@ -163,7 +185,7 @@ footer {
     left: 0;
   }
   to {
-    left: 50%;
+    left: 54%;
   }
 }
 
